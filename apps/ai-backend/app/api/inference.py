@@ -1,6 +1,7 @@
 import logging
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
+from fastapi.responses import JSONResponse
 
 from app.api.schemas import (
     InferenceRequest,
@@ -46,9 +47,18 @@ pipeline = InferencePipeline()
 )
 def run_inference(
     payload: InferenceRequest,
-) -> InferenceResponse:
+) -> InferenceResponse | JSONResponse:
 
     try:
+        sample_count = len(payload.telemetry)
+        latest_sample = payload.telemetry[-1]
+        logger.info(
+            "Inference request received: engine_id=%s flight_id=%s samples=%d",
+            latest_sample.engine_id,
+            latest_sample.flight_id,
+            sample_count,
+        )
+
         telemetry = [
             sample.model_dump()
             for sample in payload.telemetry
@@ -58,27 +68,50 @@ def run_inference(
             telemetry
         )
 
+        logger.info(
+            "Inference completed successfully: engine_id=%s flight_id=%s samples=%d",
+            latest_sample.engine_id,
+            latest_sample.flight_id,
+            sample_count,
+        )
+
         return InferenceResponse(
             success=True,
             data=result,
         )
 
     except ValueError as exc:
-        logger.exception(
-            "Inference validation error"
+        logger.warning(
+            "Inference validation failed: %s",
+            exc,
         )
 
-        raise HTTPException(
+        return JSONResponse(
             status_code=400,
-            detail=str(exc),
-        ) from exc
+            content={
+                "success": False,
+                "error": {
+                    "code": "INVALID_TELEMETRY",
+                    "message": str(exc),
+                },
+            },
+        )
 
-    except Exception as exc:
+    except Exception:
         logger.exception(
             "Inference pipeline failed"
         )
 
-        raise HTTPException(
+        return JSONResponse(
             status_code=500,
-            detail=str(exc),
-        ) from exc
+            content={
+                "success": False,
+                "error": {
+                    "code": "INFERENCE_ERROR",
+                    "message": (
+                        "An internal error occurred while processing "
+                        "the inference request."
+                    ),
+                },
+            },
+        )
