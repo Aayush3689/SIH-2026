@@ -1,0 +1,290 @@
+.gatewayView {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.summaryGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.summaryCard {
+  align-items: flex-start;
+  display: flex;
+  gap: 11px;
+  min-height: 104px;
+  padding: 15px;
+}
+
+.summaryCard p,
+.summaryCard small,
+.tableHeader p,
+.sourceTable small {
+  color: #9aa8ba;
+  display: block;
+  font-size: 11px;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.summaryCard p {
+  margin-bottom: 4px;
+}
+
+.summaryCard strong {
+  color: #e8eef7;
+  display: block;
+  font-size: 23px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 5px;
+}
+
+.summaryIcon {
+  align-items: center;
+  background: #1b293b;
+  border: 1px solid #2a3a4f;
+  border-radius: 5px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 32px;
+  justify-content: center;
+  width: 32px;
+}
+
+.summaryIcongreen { color: #36c98f; }
+.summaryIconblue { color: #2f80ed; }
+.summaryIconcyan { color: #39d0c8; }
+.summaryIconamber { color: #f1b955; }
+
+.managementCard {
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.tableHeader {
+  align-items: center;
+  border-bottom: 1px solid #2a3a4f;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 15px 16px;
+}
+
+.tableHeader h2 {
+  color: #e8eef7;
+  font-size: 15px;
+  line-height: 1.2;
+  margin: 0 0 3px;
+}
+
+.filters {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.searchField,
+.selectField {
+  align-items: center;
+  background: #111a29;
+  border: 1px solid #2a3a4f;
+  border-radius: 4px;
+  color: #9aa8ba;
+  display: flex;
+  height: 32px;
+}
+
+.searchField {
+  gap: 7px;
+  padding: 0 9px;
+  width: min(245px, 26vw);
+}
+
+.searchField input,
+.selectField select {
+  background: transparent;
+  border: 0;
+  color: #e8eef7;
+  font: inherit;
+  font-size: 12px;
+  min-width: 0;
+  outline: 0;
+}
+
+.searchField input { width: 100%; }
+.searchField input::placeholder { color: #75859a; }
+.selectField select { cursor: pointer; height: 100%; padding: 0 25px 0 9px; }
+.selectField select option { background: #162132; color: #e8eef7; }
+
+.tableScroll { overflow-x: auto; }
+
+.sourceTable {
+  border-collapse: collapse;
+  min-width: 1000px;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.sourceTable th {
+  background: #111a29;
+  border-bottom: 1px solid #2a3a4f;
+  color: #9aa8ba;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.055em;
+  padding: 9px 12px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.sourceTable td {
+  border-bottom: 1px solid rgba(42, 58, 79, 0.7);
+  color: #d6e0ec;
+  font-size: 12px;
+  padding: 10px 12px;
+  vertical-align: middle;
+}
+
+.sourceTable tbody tr:last-child td { border-bottom: 0; }
+.sourceTable tbody tr:hover { background: rgba(47, 128, 237, 0.045); }
+.sourceTable th:nth-child(1) { width: 19%; }
+.sourceTable th:nth-child(2) { width: 12%; }
+.sourceTable th:nth-child(3) { width: 13%; }
+.sourceTable th:nth-child(4) { width: 19%; }
+.sourceTable th:nth-child(5) { width: 8%; }
+.sourceTable th:nth-child(6) { width: 7%; }
+.sourceTable th:nth-child(7) { width: 11%; }
+.sourceTable th:nth-child(8) { width: 11%; }
+
+.sourceName {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  padding: 0;
+  text-align: left;
+}
+
+.sourceName strong,
+.compactValue {
+  color: #e8eef7;
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 3px;
+}
+
+.sourceName:hover strong { color: #65a5f5; }
+
+.sourceIcon {
+  align-items: center;
+  background: #1b293b;
+  border: 1px solid #2a3a4f;
+  border-radius: 4px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 28px;
+  justify-content: center;
+  width: 28px;
+}
+
+.sourceIconGCS { color: #39d0c8; }
+.sourceIconREAL_UAV { color: #2f80ed; }
+.sourceIconSIMULATOR { color: #f1b955; }
+
+.numeric {
+  color: #e8eef7;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.actions { align-items: center; display: flex; gap: 4px; }
+.actions :global(.button) { min-height: 27px; padding: 0 7px; }
+.actions :global(.icon-button) { height: 27px; width: 27px; }
+
+.details,
+.mappingPanel,
+.confirmation { display: grid; gap: 16px; }
+
+.detailTopline {
+  align-items: center;
+  color: #9aa8ba;
+  display: flex;
+  font-size: 12px;
+  gap: 9px;
+}
+
+.detailGrid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.detailGrid div {
+  background: #111a29;
+  border: 1px solid #2a3a4f;
+  margin: -1px 0 0 -1px;
+  min-height: 60px;
+  padding: 10px;
+}
+
+.detailGrid dt {
+  color: #9aa8ba;
+  font-size: 10px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.detailGrid dd {
+  color: #e8eef7;
+  font-size: 12px;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.detailActions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+
+.mappingList { display: grid; gap: 7px; list-style: none; margin: 0; padding: 0; }
+.mappingList li { align-items: center; background: #111a29; border: 1px solid #2a3a4f; display: grid; gap: 9px; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto; padding: 8px 10px; }
+.mappingList code { color: #d6e0ec; font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mappingList li > span { color: #39d0c8; }
+.confirmation p { color: #c6d2df; font-size: 13px; line-height: 1.55; margin: 0; }
+
+.srOnly {
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (max-width: 1100px) {
+  .summaryGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tableHeader { align-items: flex-start; flex-direction: column; }
+  .filters { width: 100%; }
+  .searchField { flex: 1 1 190px; width: auto; }
+}
+
+@media (max-width: 640px) {
+  .summaryGrid { grid-template-columns: 1fr; }
+  .summaryCard { min-height: 82px; }
+  .filters { align-items: stretch; flex-wrap: wrap; }
+  .searchField { flex-basis: 100%; }
+  .selectField { flex: 1 1 42%; }
+  .detailGrid { grid-template-columns: 1fr; }
+  .mappingList li { grid-template-columns: minmax(0, 1fr) auto; }
+  .mappingList li :global(.badge) { grid-column: 2; grid-row: 2; justify-self: end; }
+}

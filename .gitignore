@@ -83,3 +83,14 @@ desktop.ini
 
 # Preserve explicit placeholders
 !.gitkeep
+
+# Frontend dependencies, build output, and local state
+/apps/frontend/node_modules/
+/apps/frontend/.next/
+/apps/frontend/out/
+/apps/frontend/.env*.local
+/apps/frontend/*.tsbuildinfo
+/apps/frontend/npm-debug.log*
+/apps/frontend/yarn-debug.log*
+/apps/frontend/yarn-error.log*
+/apps/frontend/pnpm-debug.log*
