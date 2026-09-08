@@ -1,0 +1,153 @@
+{
+  "model_name": "RandomForest",
+  "task": "3-state anomaly classification",
+  "label_policy": "RAW_FAULT_AWARE",
+  "prefault_window_flights": 4,
+  "classes": {
+    "0": "NORMAL",
+    "1": "PRE_FAULT",
+    "2": "ACTIVE_FAULT"
+  },
+  "feature_set": "CORE_ONLY",
+  "feature_count": 40,
+  "features": [
+    "rpm",
+    "throttle_position_pct",
+    "cht_c",
+    "egt_c",
+    "oil_pressure_kpa",
+    "oil_temperature_c",
+    "fuel_flow_lph",
+    "fuel_pressure_kpa",
+    "intake_manifold_pressure_kpa",
+    "engine_vibration_mm_s",
+    "battery_voltage_v",
+    "alternator_output_a",
+    "injection_timing_deg_btdc",
+    "engine_load_pct",
+    "vibration_mean_30s",
+    "vibration_std_30s",
+    "rpm_mean_30s",
+    "rpm_std_30s",
+    "egt_mean_60s",
+    "egt_std_60s",
+    "cht_mean_60s",
+    "cht_std_60s",
+    "oil_pressure_mean_60s",
+    "oil_pressure_std_60s",
+    "oil_temperature_mean_60s",
+    "oil_temperature_std_60s",
+    "egt_delta",
+    "cht_delta",
+    "oil_pressure_delta",
+    "vibration_delta",
+    "egt_rate",
+    "cht_rate",
+    "oil_pressure_rate",
+    "vibration_rate",
+    "egt_expected",
+    "egt_residual",
+    "cht_expected",
+    "cht_residual",
+    "oil_temperature_expected",
+    "oil_temperature_residual"
+  ],
+  "train_engines": [
+    "ENG-2023000",
+    "ENG-2023001",
+    "ENG-2023002",
+    "ENG-2023003",
+    "ENG-2023004",
+    "ENG-2023005",
+    "ENG-2023008"
+  ],
+  "validation_engines": [
+    "ENG-2023006"
+  ],
+  "test_engines": [
+    "ENG-2023007",
+    "ENG-2023009"
+  ],
+  "validation_metrics": [
+    {
+      "accuracy": 0.5263565891472868,
+      "macro_f1": 0.5120516735690407,
+      "macro_precision": 0.5723835779333081,
+      "macro_recall": 0.5283547243812216,
+      "normal_f1": 0.23383525243578387,
+      "normal_recall": 0.3815028901734104,
+      "prefault_f1": 0.5189895778131072,
+      "prefault_recall": 0.38455497382198955,
+      "active_f1": 0.7833301904582312,
+      "active_recall": 0.819006309148265,
+      "model": "RandomForest",
+      "validation_rows": 7740
+    },
+    {
+      "accuracy": 0.4936692506459948,
+      "macro_f1": 0.4858384382268303,
+      "macro_precision": 0.5311007601144823,
+      "macro_recall": 0.49291002311521365,
+      "normal_f1": 0.22631462169957844,
+      "normal_recall": 0.3684971098265896,
+      "prefault_f1": 0.4900265957446808,
+      "prefault_recall": 0.38586387434554975,
+      "active_f1": 0.7411740972362316,
+      "active_recall": 0.7243690851735016,
+      "model": "HistGradientBoosting",
+      "validation_rows": 7740
+    }
+  ],
+  "selected_validation_macro_f1": 0.5120516735690407,
+  "final_test_metrics": {
+    "accuracy": 0.6017541545766288,
+    "macro_f1": 0.5421028872009631,
+    "macro_precision": 0.5499344811314014,
+    "macro_recall": 0.561126607518471,
+    "normal_f1": 0.704982206405694,
+    "normal_recall": 0.6237405541561712,
+    "prefault_f1": 0.25840037860861337,
+    "prefault_recall": 0.3743144424131627,
+    "active_f1": 0.6629260765885818,
+    "active_recall": 0.6853248259860789
+  },
+  "test_confusion_matrix": [
+    [
+      5943,
+      2689,
+      896
+    ],
+    [
+      947,
+      819,
+      422
+    ],
+    [
+      442,
+      643,
+      2363
+    ]
+  ],
+  "top_feature_importance": {
+    "oil_temperature_expected": 0.08031674079122775,
+    "cht_mean_60s": 0.07512356660402424,
+    "fuel_pressure_kpa": 0.06023180041662112,
+    "oil_temperature_mean_60s": 0.0584853492493358,
+    "cht_expected": 0.05405437971220319,
+    "egt_expected": 0.04645428980496675,
+    "egt_mean_60s": 0.04633676334588348,
+    "cht_residual": 0.04113554448737419,
+    "oil_pressure_mean_60s": 0.03954308711344448,
+    "vibration_mean_30s": 0.036856764360165134,
+    "cht_c": 0.03443244459608754,
+    "intake_manifold_pressure_kpa": 0.03028592997852564,
+    "oil_temperature_residual": 0.030032787894842917,
+    "fuel_flow_lph": 0.02966828946173252,
+    "oil_temperature_c": 0.027405944910759164,
+    "engine_load_pct": 0.027108142431631052,
+    "rpm": 0.022144256641557444,
+    "oil_pressure_kpa": 0.021781309193705068,
+    "throttle_position_pct": 0.021689885087527477,
+    "egt_std_60s": 0.02136142745923529
+  }
+}

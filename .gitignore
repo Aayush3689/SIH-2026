@@ -1,0 +1,85 @@
+# Python artifacts in the AI backend
+/apps/ai-backend/**/__pycache__/
+/apps/ai-backend/**/*.py[cod]
+/apps/ai-backend/**/$py.class
+
+# Python environments
+/apps/ai-backend/venv/
+/apps/ai-backend/.venv/
+/apps/ai-backend/env/
+/apps/ai-backend/ENV/
+
+# Local environment files and credentials
+/apps/ai-backend/.env
+/apps/ai-backend/.env.*
+!/apps/ai-backend/.env.example
+/apps/ai-backend/**/*.pem
+/apps/ai-backend/**/*.key
+/apps/ai-backend/**/*.crt
+/apps/ai-backend/**/*.secret
+
+# Python build, test, and notebook output
+/apps/ai-backend/build/
+/apps/ai-backend/dist/
+/apps/ai-backend/**/*.egg-info/
+/apps/ai-backend/.eggs/
+/apps/ai-backend/.coverage
+/apps/ai-backend/.coverage.*
+/apps/ai-backend/htmlcov/
+/apps/ai-backend/.pytest_cache/
+/apps/ai-backend/.tox/
+/apps/ai-backend/.nox/
+/apps/ai-backend/.cache/
+/apps/ai-backend/**/.ipynb_checkpoints/
+
+# AI training data and generated experiment artifacts
+/apps/ai-backend/training/datasets/raw/
+/apps/ai-backend/training/datasets/processed/**/*.csv
+/apps/ai-backend/training/datasets/processed/**/*.csv.gz
+/apps/ai-backend/training/datasets/processed/**/*.parquet
+/apps/ai-backend/training/datasets/processed/**/*.json
+!/apps/ai-backend/training/datasets/processed/**/*.joblib
+/apps/ai-backend/training/datasets/splits/
+/apps/ai-backend/training/**/archive/
+/apps/ai-backend/training/**/outputs/
+/apps/ai-backend/training/**/output/
+/apps/ai-backend/training/**/checkpoints/
+/apps/ai-backend/training/**/runs/
+/apps/ai-backend/training/**/wandb/
+/apps/ai-backend/training/**/mlruns/
+/apps/ai-backend/models/**/archive/
+/apps/ai-backend/models/**/checkpoints/
+/apps/ai-backend/models/**/outputs/
+/apps/ai-backend/models/**/runs/
+
+# Logs, temporary files, and local databases
+/apps/ai-backend/**/*.log
+/apps/ai-backend/**/logs/
+/apps/ai-backend/**/tmp/
+/apps/ai-backend/**/temp/
+/apps/ai-backend/**/*.tmp
+/apps/ai-backend/**/*.temp
+/apps/ai-backend/**/*.db
+/apps/ai-backend/**/*.sqlite
+/apps/ai-backend/**/*.sqlite3
+/apps/ai-backend/**/*.pid
+/apps/ai-backend/**/*.seed
+/apps/ai-backend/**/*.lock
+/apps/ai-backend/**/*.bak
+/apps/ai-backend/**/*.backup
+/apps/ai-backend/**/*.old
+
+# Local configuration and editor/OS files
+/apps/ai-backend/**/config.local.py
+/apps/ai-backend/**/settings.local.py
+/apps/ai-backend/**/local_config.py
+/.vscode/
+/.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Preserve explicit placeholders
+!.gitkeep

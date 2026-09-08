@@ -1,0 +1,24 @@
+RUL V1 DATASET AUDIT
+============================================================
+
+Rows: 124
+Columns: 135
+Engines: 10
+Flights: 124
+Candidate features: 128
+Missing target: 0
+Duplicate rows: 0
+Zero RUL flights: 10
+
+Excluded features:
+- engine_flight_number
+- engine_id
+- engine_total_flights
+- environmental_profile
+- first_timestamp
+- flight_id
+- flight_phase
+- last_timestamp
+- mission_type
+- rul_hours_remaining
+- uav_id

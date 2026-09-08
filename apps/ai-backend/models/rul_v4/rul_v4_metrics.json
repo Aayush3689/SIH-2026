@@ -1,0 +1,69 @@
+{
+  "selected_model": "hist_gradient_boosting",
+  "train_flights": 72,
+  "validation_flights": 22,
+  "test_flights": 30,
+  "train_windows": 360,
+  "validation_windows": 110,
+  "test_windows": 150,
+  "window_samples": 8,
+  "windows_per_flight": 5,
+  "validation_results": [
+    {
+      "model": "hist_gradient_boosting",
+      "MAE_hours": 9.470453605586323,
+      "RMSE_hours": 14.336281909528557,
+      "R2": -1.6847296481753404,
+      "Mean_Bias_hours": 8.730298845346015,
+      "low_rul_count": 80,
+      "low_rul_MAE_hours": 9.844988322074999,
+      "low_rul_RMSE_hours": 15.179495189623966,
+      "low_rul_bias_hours": 9.671370607082727,
+      "selection_score": 9.582814020532926
+    },
+    {
+      "model": "random_forest",
+      "MAE_hours": 13.04853469907576,
+      "RMSE_hours": 16.25876595391754,
+      "R2": -2.453048297825431,
+      "Mean_Bias_hours": 12.958114993942205,
+      "low_rul_count": 80,
+      "low_rul_MAE_hours": 14.146324207250657,
+      "low_rul_RMSE_hours": 17.14885858541821,
+      "low_rul_bias_hours": 14.146324207250657,
+      "selection_score": 13.377871551528226
+    }
+  ],
+  "window_test": {
+    "MAE_hours": 11.892232394508515,
+    "RMSE_hours": 15.021967573930171,
+    "R2": -3.498399458424889,
+    "Mean_Bias_hours": 11.807857149749807,
+    "low_rul": {
+      "count": 115,
+      "MAE_hours": 11.22882546338656,
+      "RMSE_hours": 14.149837171523535,
+      "Mean_Bias_hours": 11.22882546338656
+    }
+  },
+  "flight_test": {
+    "MAE_hours": 11.892232394508515,
+    "RMSE_hours": 15.009058534739316,
+    "R2": -3.4906714343086156,
+    "Mean_Bias_hours": 11.807857149749806,
+    "low_rul": {
+      "count": 23,
+      "MAE_hours": 11.228825463386558,
+      "RMSE_hours": 14.138375035743417,
+      "Mean_Bias_hours": 11.228825463386558
+    }
+  },
+  "prediction_range": {
+    "actual_min": 0.0,
+    "actual_max": 30.0,
+    "predicted_min": 6.295907311883647,
+    "predicted_max": 41.582897616729824,
+    "actual_mean": 7.359999999999999,
+    "predicted_mean": 19.167857149749807
+  }
+}
