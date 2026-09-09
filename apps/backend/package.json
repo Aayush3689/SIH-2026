@@ -15,9 +15,7 @@
     "tsx": "^4.23.13",
     "typescript": "^7.0.2"
   },
-  "dependencies": {
-  },
-    "optionalDependencies": {
+  "optionalDependencies": {
     "socketcan": "^4.3.1"
   }
 }
