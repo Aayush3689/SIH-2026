@@ -14,5 +14,8 @@
     "@types/node": "^26.5.0",
     "tsx": "^4.23.13",
     "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "socketcan": "^4.3.1"
   }
 }
