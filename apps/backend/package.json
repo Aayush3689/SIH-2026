@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "simulator": "tsx src/simulator/run-simulator.ts"
+    "simulator": "tsx src/simulator/run-simulator.ts",
+    "can:gateway": "tsx src/adapters/can/run-can-gateway.ts"
   },
   "keywords": [],
   "author": "",
