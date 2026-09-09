@@ -16,6 +16,8 @@
     "typescript": "^7.0.2"
   },
   "dependencies": {
+  },
+    "optionalDependencies": {
     "socketcan": "^4.3.1"
   }
 }
