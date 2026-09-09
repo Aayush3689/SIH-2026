@@ -85,6 +85,7 @@ desktop.ini
 !.gitkeep
 
 # Frontend dependencies, build output, and local state
+/apps/backend/node_modules/
 /apps/frontend/node_modules/
 /apps/frontend/.next/
 /apps/frontend/out/
