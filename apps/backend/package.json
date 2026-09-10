@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "simulator": "tsx src/simulator/run-simulator.ts",
-    "can:gateway": "tsx src/adapters/can/run-can-gateway.ts"
+    "can:gateway": "tsx src/adapters/can/run-can-gateway.ts",
+    "test:remote-can": "tsx src/adapters/can/test-remote-can.ts",
+    "test:can-pipeline": "tsx src/adapters/can/test-can-pipeline.ts"
   },
   "keywords": [],
   "author": "",
