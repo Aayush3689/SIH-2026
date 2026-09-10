@@ -4,7 +4,7 @@ services:
       context: ./apps/frontend
       dockerfile: Dockerfile
     ports:
-      - "3002:3000"
+      - "3001:3000"
     environment:
       NODE_ENV: production
     restart: unless-stopped
